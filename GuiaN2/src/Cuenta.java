@@ -3,8 +3,6 @@
 //void extraer(float c) Descuenta del saldo la cantidad recibida. Tras la llamada a este método el saldo no podrá quedar en negativo.
 //float getSaldo(). Devuelve el saldo actual.
 
-import java.util.Scanner;
-
 public class Cuenta {
     private String nombre;
     private String apellido;
@@ -74,8 +72,7 @@ public class Cuenta {
     }
 
     public void ingresar(float monto) {
-        float newSaldo = this.getSaldo();
-        newSaldo = this.getSaldo()+monto;
+        float newSaldo = this.getSaldo()+monto;
         this.setSaldo(newSaldo);
         System.out.println("Nuevo balance: "+ this.getSaldo());
     }
@@ -90,5 +87,15 @@ public class Cuenta {
                 this.setSaldo(newSaldo);
             System.out.println("Nuevo balance: " + this.getSaldo());
         }
+    }
+
+    public void mostrarSaldo(){
+
+        System.out.println("Saldo de tu cuenta: " + this.getSaldo());
+
+    }
+
+    public void bienvenida(){
+        System.out.println("Bienvenido " + this.getNombre() + " " +this.getApellido());
     }
 }
